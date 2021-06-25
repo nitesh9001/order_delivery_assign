@@ -1,0 +1,472 @@
+{
+	"info": {
+		"_postman_id": "2235424a-81c1-40f8-8cda-7134eb4e40f3",
+		"name": "Order",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Add new User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Nitesh Singh\",\r\n    \"phoneNo\":\"7874562234\",\r\n    \"password\":\"123456\",\r\n    \"address\":\"Durgakund Lanka varanasi 221005\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/customer/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Get user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phoneNo\":\"7874562235\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/customer/login"
+					},
+					"response": []
+				},
+				{
+					"name": "get Userby ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/customer/60d4997b4738f967a0d78946"
+					},
+					"response": []
+				},
+				{
+					"name": "Add to cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBob25lTm8iOiI3ODc0NTYyMjM1IiwiaWQiOiI2MGQ0OTllYTc2ZmQxZjFhODQxNWM3MGYifSwiaWF0IjoxNjI0NTQ3MjIyfQ.aEjELnPvAzD18ZfStYoUMfRCZZcwZ0EhoJruH3FSirI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"products\":[{\r\n        \"products\":\"60d4d2c922fd130e84a0d736\",\r\n        \"quantity\":2\r\n    },{\r\n        \"products\":\"60d4daf923d9d96330fa6ad8\",\r\n        \"quantity\":2\r\n    }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/cart/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Get my cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/cart/get"
+					},
+					"response": []
+				},
+				{
+					"name": "Oder products",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBob25lTm8iOiI3ODc0NTYyMjM1IiwiaWQiOiI2MGQ0OTllYTc2ZmQxZjFhODQxNWM3MGYifSwiaWF0IjoxNjI0NTQ3MjIyfQ.aEjELnPvAzD18ZfStYoUMfRCZZcwZ0EhoJruH3FSirI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cartId\":\"60d4db2e23d9d96330fa6adf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/order/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Get order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBob25lTm8iOiI3ODc0NTYyMjM0IiwiaWQiOiI2MGQ0YTE3Y2EwZTFiYjZiYzRhZWZkOTMiLCJ1c2VyVHlwZSI6ImFkbWluIn0sImlhdCI6MTYyNDU5NDg4NH0.fmyUF90kXNoDv5f2CcWH2lGPO-L7bSnukiHyCaAAOfU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"Task Created\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/order/get"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DeliveryBoy",
+			"item": [
+				{
+					"name": "Add new D.boy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Nitesh Singh\",\r\n    \"phoneNo\":\"7874562234\",\r\n    \"password\":\"123456\",\r\n    \"address\":\"Durgakund Lanka varanasi 221005\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/deliveryBoy/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Get D.boy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/deliveryBoy/get"
+					},
+					"response": []
+				},
+				{
+					"name": "login d.boy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phoneNo\":\"\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/deliveryBoy/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all order assigned",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBob25lTm8iOiI3ODc0NTYyMjM0IiwiaWQiOiI2MGQ0YTM0MTY5OGVkMzBlNzQxZmZmODYiLCJ1c2VyVHlwZSI6ImRlbGl2ZXJ5In0sImlhdCI6MTYyNDU5ODY3OH0.8o3U8f_frT5V9zVmw4zBybCXk4bChsrM58QQ8ajCHOc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/order/get"
+					},
+					"response": []
+				},
+				{
+					"name": "get D.boy ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/deliveryBoy/60d4a341698ed30e741fff86"
+					},
+					"response": []
+				},
+				{
+					"name": "Update status",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\":\"60d4e77c8576ee32c86baef2\",\r\n    \"statusId\":\"60d56dbf34f40a74c0ec78c9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/order/status"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Add new admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Nitesh Singh\",\r\n    \"phoneNo\":\"7874562234\",\r\n    \"password\":\"123456\",\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/admin/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Get admin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get all order with filter",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBob25lTm8iOiI3ODc0NTYyMjM0IiwiaWQiOiI2MGQ0YTE3Y2EwZTFiYjZiYzRhZWZkOTMiLCJ1c2VyVHlwZSI6ImFkbWluIn0sImlhdCI6MTYyNDU5NDg4NH0.fmyUF90kXNoDv5f2CcWH2lGPO-L7bSnukiHyCaAAOfU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"60d56dbf34f40a74c0ec78c9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/order/get"
+					},
+					"response": []
+				},
+				{
+					"name": "get admin ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/admin/60d4a17ca0e1bb6bc4aefd93"
+					},
+					"response": []
+				},
+				{
+					"name": "login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phoneNo\":\"7874562234\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/admin/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Deliovery Assign",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBob25lTm8iOiI3ODc0NTYyMjM0IiwiaWQiOiI2MGQ0YTE3Y2EwZTFiYjZiYzRhZWZkOTMiLCJ1c2VyVHlwZSI6ImFkbWluIn0sImlhdCI6MTYyNDU5NDg4NH0.fmyUF90kXNoDv5f2CcWH2lGPO-L7bSnukiHyCaAAOfU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"orderId\":\"60d4e77c8576ee32c86baef2\",\r\n      \"deliveryBoyId\" :\"60d4a341698ed30e741fff86\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/order/assign"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Catalouge",
+			"item": [
+				{
+					"name": "Add category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Food & Breverage\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/category/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bread\",\r\n      \"serailNo\": \"SKU125\",\r\n      \"quantity\": 10,\r\n      \"address\": [{\r\n          \"location\":\"Ln/23 ,Kotni Lucknow 221006\"\r\n      },{\r\n          \"location\":\"LHN ,Ratapur Raebareli 229316\"\r\n      }],\r\n    \"category\":\"60d4af21cadf816e38ec5304\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/product/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get product by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Status",
+			"item": [
+				{
+					"name": "Add status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBob25lTm8iOiI3ODc0NTYyMjM0IiwiaWQiOiI2MGQ0YTE3Y2EwZTFiYjZiYzRhZWZkOTMiLCJ1c2VyVHlwZSI6ImFkbWluIn0sImlhdCI6MTYyNDU5NDg4NH0.fmyUF90kXNoDv5f2CcWH2lGPO-L7bSnukiHyCaAAOfU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Canceled\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/status/add"
+					},
+					"response": []
+				},
+				{
+					"name": "get status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/status/get"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
